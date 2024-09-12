@@ -17,3 +17,7 @@
   background-color: lightblue;
   font-weight: bold;
 }
+
+a[href^=http]::after {
+  content: ' ↗';
+}
