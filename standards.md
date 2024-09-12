@@ -3,6 +3,22 @@ title: "Web Standards"
 permalink: /standards/
 ---
 
+## Verifiable Credentials Working Group
+
+* [Verifiable Credentials Data Model](https://www.w3.org/TR/vc-data-model-2.0/)
+* [Verifiable Credential Data Integrity](https://w3c.github.io/vc-data-integrity/)
+  * [Data Integrity EdDSA Cryptosuites](https://www.w3.org/TR/vc-di-eddsa/)
+  * [Data Integrity ECDSA Cryptosuites](https://www.w3.org/TR/vc-di-ecdsa/)
+  * [Data Integrity BBS Cryptosuites v1.0](https://www.w3.org/TR/vc-di-bbs/)
+
+## Credentials Community Group
+
+* [VC API](https://w3c-ccg.github.io/vc-api/)
+* [Verifiable Presentation Request](https://w3c-ccg.github.io/vp-request-spec/)
+* [Verifiable Credential Rendering Methods](https://w3c-ccg.github.io/vc-render-method/)
+
+---
+
 The Credential Handler API (CHAPI) was originally described in a draft report for the [W3C Credentials Community Group](https://www.w3.org/community/credentials/). It is being developed now as a ready-to-use API, libraries, and as integration documentation. This work supports the W3G CCG's mission to explore the technologies and use cases involving [Verifiable Credentials](https://www.w3.org/TR/vc-data-model-2.0/#dfn-verifiable-credential).
 
 ## Verifiable Credentials
