@@ -1,49 +1,49 @@
 ---
-title: "CHAPI Playground Integration Guide"
+title: "Integration Guide"
 permalink: /developers/playgroundfaq/
 ---
-# CHAPI Playground Integration Guide
+# VC Playground Integration Guide
 
-Have you already integrated CHAPI into your project and now you’re interested in making your Issuer, Wallet, or Verifier available for experimentation? This Integration Guide/FAQ for the CHAPI Playground will help you accomplish this!
+Have you already integrated CHAPI into your project and now you’re interested in making your Issuer, Wallet, or Verifier available for experimentation? This Integration Guide/FAQ for the [VC Playground](https://vcplayground.org/) will help you accomplish this!
 
 ## Issuers
 ### Introduction
-You can integrate your Issuer into our tooling with the [CHAPI Playground Issuer](https://vcplayground.org/issuer).
+You can integrate your Issuer into our tooling with the [VC Playground Issuer](https://vcplayground.org/issuer).
 
 If you provide a [VC-API Issue Credential Endpoint](https://w3c-ccg.github.io/vc-api/#issue-credential), we can add your issuer to the list of options accessible from the "Gear" icon on the site.  Your endpoint should end in `/credentials/issue`.
 
-We've put together a [simple test utility](https://github.com/credential-handler/chapi-playground-test-suite) that you can run locally against your endpoint (the test runs locally; the endpoint can be running anywhere).  Once your issuer endpoint can pass the test conditions, we'll be ready to add it to the list of options in the CHAPI Playground.
+We've put together a [simple test utility](https://github.com/credential-handler/chapi-playground-test-suite) that you can run locally against your endpoint (the test runs locally; the endpoint can be running anywhere).  Once your issuer endpoint can pass the test conditions, we'll be ready to add it to the list of options in the VC Playground.
 
 Once integrated into the Playground, your issuer will be able to work with any CHAPI-enabled wallet, including the Veres Wallet. (Note that you can also add CHAPI support directly to your issuer so that it can communicate directly with digital wallets).
 
-### Adding contexts to issuers so that they can support the example credentials hosted on the CHAPI Playground.
-Many VC issuers keep a list of supported JSON-LD contexts.  To ensure interoperability, make sure your issuer supports the [following contexts](https://docs.google.com/document/d/1L3GnHtvrH51MJ7W2ZAL-PIfzR2dxLyFoDrUAHZ1KBU4/edit) used in the example credentials hosted on the CHAPI Playground.
+### Adding contexts to issuers so that they can support the example credentials hosted on the VC Playground.
+Many VC issuers keep a list of supported JSON-LD contexts.  To ensure interoperability, make sure your issuer supports the [following contexts](https://docs.google.com/document/d/1L3GnHtvrH51MJ7W2ZAL-PIfzR2dxLyFoDrUAHZ1KBU4/edit) used in the example credentials hosted on the VC Playground.
 
 NOTE: Example credentials can be added or updated in
 [@credential-handler/vc-examples](https://github.com/credential-handler/vc-examples).
 
 ### How should my issuer endpoint handle authentication?
-Issuer endpoint authentication is up-to-you.  Many issuers choose to start with open (unauthenticated) VC-API endpoints, but the CHAPI Playground backend also supports zCap and Oauth2 authentication.  You can test with the endpoint open and then add backend auth as a second step, if you would like to have it.
+Issuer endpoint authentication is up-to-you.  Many issuers choose to start with open (unauthenticated) VC-API endpoints, but the VC Playground backend also supports zCap and Oauth2 authentication.  You can test with the endpoint open and then add backend auth as a second step, if you would like to have it.
 
 ### Do I need to enable CORS on my issuer endpoint?
-Issuer backends do not need CORS because the CHAPI Playground web app makes a backend call to your VC-API endpoint.
+Issuer backends do not need CORS because the VC Playground web app makes a backend call to your VC-API endpoint.
 
 
 ## Wallets
 ### Introduction
-Wallets can integrate with the CHAPI Playground using two different methods:
+Wallets can integrate with the VC Playground using two different methods:
 
-1. **Basic CHAPI store() workflow:** this workflow uses CHAPI to directly communicate a Verifiable Credential.  The [CHAPI Playground](https://vcplayground.org/) site uses VCAPI on the backend to connect to various issuer sites.  This is a simplified workflow that can get developers up-and-running without the need to implement a credential pickup using VC-API Exchanges.
+1. **Basic CHAPI store() workflow:** this workflow uses CHAPI to directly communicate a Verifiable Credential.  The [VC Playground](https://vcplayground.org/) site uses VCAPI on the backend to connect to various issuer sites.  This is a simplified workflow that can get developers up-and-running without the need to implement a credential pickup using VC-API Exchanges.
 2. **VC-API Exchanges workflow:** in this workflow, the Playground site uses CHAPI to communicate the URL of a VC-API `/exchanges` endpoint where a Verifiable Credential can be picked up.  The use of CHAPI here preserves the individual's choice of wallet and avoids the need to make assumptions about credential types, wallet apps, etc.  The wallet then hits the specified `/exchanges` endpoint and receives a Verifiable Presentation containing the Credential.  DID Authentication and credential pickup are performed in the same step.  This is especially useful for native mobile apps.
 
 ### Integrating with the basic CHAPI store() workflow
-Any CHAPI-enabled wallet can work with the CHAPI Playground.  There is no explicit setting or integration required with the Playground site; all that’s required is that the user register the wallet with their browser (web wallets) or as a Share Target (native mobile apps).  See the [developer notes](https://chapi.io/developers/wallets) for instructions and examples on how to implement CHAPI in a web wallet.
+Any CHAPI-enabled wallet can work with the VC Playground.  There is no explicit setting or integration required with the Playground site; all that’s required is that the user register the wallet with their browser (web wallets) or as a Share Target (native mobile apps).  See the [developer notes](https://chapi.io/developers/wallets) for instructions and examples on how to implement CHAPI in a web wallet.
 
-When the CHAPI Playground issues a credential, it generates a CHAPI `store()` event.  This is also documented in the developer notes linked above.
+When the VC Playground issues a credential, it generates a CHAPI `store()` event.  This is also documented in the developer notes linked above.
 
-### Performing DID Authentication (“DID Auth”) with the CHAPI Playground in the store() workflow?
+### Performing DID Authentication (“DID Auth”) with the VC Playground in the store() workflow?
 
-The CHAPI Playground follows the DID Auth patterns described in the [Verifiable Presentation Request (VPR) spec](https://w3c-ccg.github.io/vp-request-spec/#example-example-get-request).
+The VC Playground follows the DID Auth patterns described in the [Verifiable Presentation Request (VPR) spec](https://w3c-ccg.github.io/vp-request-spec/#example-example-get-request).
 
 First, the Playground will send a Verifiable Presentation Request as a "web" credential object using `navigator.credentials.get()`.  Second, your wallet will respond with a Verifiable Presentation,  also as a "web" credential object.  Examples of both the VPR and VP are included in the [wallet developer notes](https://chapi.io/developers/wallets).
 
@@ -55,9 +55,9 @@ The general `/exchanges` pattern is illustrated in the [Verifiable Presentation 
 
 In this example, the `interact` field describes the type and URL of the `/exchanges` endpoint.  The `type` is an `UnmediatedPresentationService2021`, which is outlined in the [VC-API spec](https://w3c-ccg.github.io/vc-api/#exchange-examples).
 
-The CHAPI Playground implementation follows the general pattern, via the following spcific steps (with example data):
+The VC Playground implementation follows the general pattern, via the following spcific steps (with example data):
 
-**Step 1**: CHAPI Playground sends a DID Auth Request (VPR) over CHAPI to the wallet.  This includes an `interact` field that specifies an `/exchanges` endpoint on the CHAPI Playground.  
+**Step 1**: VC Playground sends a DID Auth Request (VPR) over CHAPI to the wallet.  This includes an `interact` field that specifies an `/exchanges` endpoint on the VC Playground.  
 ```json
 {
   "query": {
@@ -103,7 +103,7 @@ The CHAPI Playground implementation follows the general pattern, via the followi
 }
 ```
 
-**Step 3**: The CHAPI Playground `/exchanges` endpoint responds with a VP containing the specified credential
+**Step 3**: The VC Playground `/exchanges` endpoint responds with a VP containing the specified credential
 ```json
 {
   "verifiablePresentation": {
@@ -125,4 +125,4 @@ The CHAPI Playground implementation follows the general pattern, via the followi
 
 
 ## Verifiers
-Integrating Verifiers into the CHAPI Playground is next on our agenda, stay tuned for more information on that process as it becomes available.
+Integrating Verifiers into the VC Playground is next on our agenda, stay tuned for more information on that process as it becomes available.
