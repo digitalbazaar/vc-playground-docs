@@ -2,7 +2,6 @@
 title: "QueryByExample"
 permalink: /chapi/wallets/querybyexample/
 ---
-# {{ title }}
 
 Prerequisite: This document assumes completion of the
 [CHAPI integration for Digital Wallets integration instructions](./).

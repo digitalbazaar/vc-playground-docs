@@ -3,8 +3,6 @@ title: "Handling a VC API Exchange"
 permalink: /chapi/wallets/exchanges/
 ---
 
-## {{ title }}
-
 <figure>
 
 > A VC API workflow defines a particular set of steps for exchanging verifiable

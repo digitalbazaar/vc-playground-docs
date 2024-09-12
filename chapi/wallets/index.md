@@ -2,23 +2,11 @@
 title: "CHAPI for Web Wallets"
 permalink: /chapi/wallets/
 ---
-# CHAPI for Digital Wallets
+
 CHAPI integrates easily into digital wallet software, allowing your wallet to receive and present Verifiable Credentials to/from third party sites.
 
-## Web Wallets
+#### Resources
 
-* [Wallet Registration](#wallet-registration)
-* [Verifiable Credential Storage](#verifiable-credential-storage)
-* [Verifiable Credential Presentation](#verifiable-credential-presentation)
-* [DID Authentication with CHAPI](#did-authentication-with-chapi)
-
-## Native Wallets
-* [Wallet Registration](native/#wallet-registration)
-* [Verifiable Credential Storage](native/#verifiable-credential-storage)
-
-## Resources
-
-* [Working with `QueryByExample` format requests](querybyexample)
 - **Example Code**: the [chapi-demo-wallet](https://github.com/credential-handler/chapi-demo-wallet) contains a full example implementation and is referenced throughout this guide.
 - **Polyfill Library**: The [credential-handler-polyfill](https://github.com/credential-handler/credential-handler-polyfill) library provides the needed `CredentialHandler` API within the browser.
 - **Helper Library**: The [web-credential-handler](https://github.com/credential-handler/web-credential-handler) library provides helper functions for CHAPI integration in your code.

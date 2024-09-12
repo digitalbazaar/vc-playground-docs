@@ -1,18 +1,9 @@
 ---
 title: "CHAPI for Native Wallet"
-permalink: /chapi/wallets/native/
 ---
 
-[Back to Wallet Documentation](../)
+#### Resources
 
-# Native Wallets
-
-* [Wallet Registration](#wallet-registration)
-* [Verifiable Credential Storage](#verifiable-credential-storage)
-
-## Resources
-
-* [Working with `QueryByExample` format requests](../querybyexample)
 - **Example Code**: the [chapi-demo-wallet](https://github.com/credential-handler/chapi-demo-wallet) contains a full example implementation and is referenced throughout this guide.
 - **Polyfill Library**: The [credential-handler-polyfill](https://github.com/credential-handler/credential-handler-polyfill) library provides the needed `CredentialHandler` API within the browser.
 - **Helper Library**: The [web-credential-handler](https://github.com/credential-handler/web-credential-handler) library provides helper functions for CHAPI integration in your code.

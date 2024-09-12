@@ -2,7 +2,7 @@
 title: "Web Standards"
 permalink: /standards/
 ---
-# CHAPI Related Web Standards
+
 The Credential Handler API (CHAPI) was originally described in a draft report for the [W3C Credentials Community Group](https://www.w3.org/community/credentials/). It is being developed now as a ready-to-use API, libraries, and as integration documentation. This work supports the W3G CCG's mission to explore the technologies and use cases involving [Verifiable Credentials](https://www.w3.org/TR/vc-data-model-2.0/#dfn-verifiable-credential).
 
 ## Verifiable Credentials
