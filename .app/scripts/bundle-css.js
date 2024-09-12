@@ -6,6 +6,10 @@ const isWatchMode = args.includes("--watch");
 
 ensureCustomCssExists();
 
+const distDir = process.env.ELEVENTY_NOTES_PATH_PREFIX
+  ? `./dist/${process.env.ELEVENTY_NOTES_PATH_PREFIX}`
+  : './dist';
+
 let bundler = new Parcel({
   entries: "css/app.*.scss",
   mode: isWatchMode ? "development" : "production",
@@ -13,6 +17,11 @@ let bundler = new Parcel({
   // Ensure the custom CSS file outside the project root is watched
   // See https://github.com/parcel-bundler/parcel/issues/4332
   watchDir: path.resolve(__dirname, "./../../"),
+  targets: {
+    default: {
+      distDir
+    }
+  }
 });
 
 if (isWatchMode) {

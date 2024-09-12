@@ -4,14 +4,15 @@ const {
 } = require("@11ty/eleventy");
 const syntaxHighlightPlugin = require("@11ty/eleventy-plugin-syntaxhighlight");
 
+const pathPrefix = process.env.ELEVENTY_NOTES_PATH_PREFIX || undefined;
 module.exports = {
   mdLibrary: require("./md.library"),
 
   configObj: {
-    pathPrefix: process.env.ELEVENTY_NOTES_PATH_PREFIX || undefined,
+    pathPrefix,
     dir: {
       input: "./../",
-      output: "dist",
+      output: `dist/${pathPrefix ? pathPrefix : ''}`,
       data: ".app/_data",
       includes: ".app/lib",
     },
@@ -26,7 +27,9 @@ module.exports = {
     config.addPlugin(syntaxHighlightPlugin);
 
     config.setServerOptions({
-      watch: ["dist/app.js", "dist/app.*.css"],
+      watch: [
+        `dist/${pathPrefix ? pathPrefix + '/' : ''}app.js`,
+        `dist/${pathPrefix ? pathPrefix + '/' : ''}app.*.css`],
     });
 
     config.addWatchTarget("./../app.js");
