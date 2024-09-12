@@ -1,5 +1,5 @@
 ---
-title: "Web Standards related to the Credential Handler API"
+title: "Web Standards"
 permalink: /standards/
 ---
 # CHAPI Related Web Standards

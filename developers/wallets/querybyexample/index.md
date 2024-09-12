@@ -1,5 +1,5 @@
 ---
-title: "Developer Docs for CHAPI Wallet QueryByExample"
+title: "QueryByExample"
 permalink: /developers/wallets/querybyexample/
 ---
 # {{ title }}

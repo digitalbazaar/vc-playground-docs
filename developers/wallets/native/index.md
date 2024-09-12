@@ -1,5 +1,5 @@
 ---
-title: "Developer Docs for Native Wallet Applications"
+title: "CHAPI for Native Wallet"
 permalink: /developers/wallets/native/
 ---
 

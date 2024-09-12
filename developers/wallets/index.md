@@ -1,5 +1,5 @@
 ---
-title: "Developer Docs for Digital Wallets"
+title: "CHAPI for Web Wallets"
 permalink: /developers/wallets/
 ---
 # CHAPI for Digital Wallets
