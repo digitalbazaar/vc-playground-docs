@@ -2,11 +2,11 @@
 const { defineConfig, createNotesQuery } = require("./.app/app-config");
 
 module.exports = defineConfig({
-  title: "Eleventy Notes",
+  title: "CHAPI is the Credential Handler API",
   description:
-    "A simple, lightweight, and flexible note-taking template for Eleventy.",
+    "An open-source solution for communicating Verifiable Credentials on the Web.",
   editThisNote: {
-    url: "https://github.com/rothsandro/eleventy-notes/edit/{{branch}}/{{file}}",
+    url: "https://github.com/digitalbazaar/vc-playground-docs/edit/{{branch}}/{{file}}",
   },
   customProperties: {
     properties: [
@@ -21,18 +21,6 @@ module.exports = defineConfig({
     ],
   },
   sidebar: {
-    links: [
-      {
-        url: "https://github.com/rothsandro/eleventy-notes",
-        label: "GitHub / Support",
-        icon: "github",
-      },
-      {
-        url: "https://www.buymeacoffee.com/sandroroth",
-        label: "Buy me a coffee",
-        icon: "coffee",
-      },
-    ],
     sections: [
       {
         label: "Introduction",
@@ -45,50 +33,34 @@ module.exports = defineConfig({
         ],
       },
       {
-        label: "Guides",
+        label: "Implementing CHAPI",
         groups: [
           {
-            label: "Writing Notes",
             query: createNotesQuery({
-              pattern: "^/Writing/",
+              pattern: "^/developers/[^/]+$",
+            }),
+          },
+          {
+            label: "Issuers",
+            query: createNotesQuery({
+              pattern: "^/developers/issuers/",
+            }),
+          },
+          {
+            label: "Wallets",
+            query: createNotesQuery({
+              pattern: "^/developers/wallets/",
               tree: {
                 replace: {
-                  "^/\\w+": "",
+                  "^/\\w+/\\w+": "",
                 },
               },
             }),
           },
           {
-            label: "Organizing Notes",
+            label: "Verifiers",
             query: createNotesQuery({
-              pattern: "^/Organizing/",
-            }),
-          },
-          {
-            label: "Core Features",
-            query: createNotesQuery({
-              pattern: "^/Features/",
-              tree: {
-                replace: {
-                  "^/\\w+": "",
-                },
-              },
-            }),
-          },
-          {
-            label: "Deployment",
-            query: createNotesQuery({
-              pattern: "^/Deployment/",
-            }),
-          },
-        ],
-      },
-      {
-        label: "Releases",
-        groups: [
-          {
-            query: createNotesQuery({
-              pattern: "^/Releases/",
+              pattern: "^/developers/verifiers/",
             }),
           },
         ],
