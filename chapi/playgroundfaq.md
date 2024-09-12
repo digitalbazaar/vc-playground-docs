@@ -1,6 +1,6 @@
 ---
 title: "Integration Guide"
-permalink: /developers/playgroundfaq/
+permalink: /chapi/playgroundfaq/
 ---
 # VC Playground Integration Guide
 
@@ -37,7 +37,7 @@ Wallets can integrate with the VC Playground using two different methods:
 2. **VC-API Exchanges workflow:** in this workflow, the Playground site uses CHAPI to communicate the URL of a VC-API `/exchanges` endpoint where a Verifiable Credential can be picked up.  The use of CHAPI here preserves the individual's choice of wallet and avoids the need to make assumptions about credential types, wallet apps, etc.  The wallet then hits the specified `/exchanges` endpoint and receives a Verifiable Presentation containing the Credential.  DID Authentication and credential pickup are performed in the same step.  This is especially useful for native mobile apps.
 
 ### Integrating with the basic CHAPI store() workflow
-Any CHAPI-enabled wallet can work with the VC Playground.  There is no explicit setting or integration required with the Playground site; all that’s required is that the user register the wallet with their browser (web wallets) or as a Share Target (native mobile apps).  See the [developer notes](https://chapi.io/developers/wallets) for instructions and examples on how to implement CHAPI in a web wallet.
+Any CHAPI-enabled wallet can work with the VC Playground.  There is no explicit setting or integration required with the Playground site; all that’s required is that the user register the wallet with their browser (web wallets) or as a Share Target (native mobile apps).  See the [developer notes](https://chapi.io/chapi/wallets) for instructions and examples on how to implement CHAPI in a web wallet.
 
 When the VC Playground issues a credential, it generates a CHAPI `store()` event.  This is also documented in the developer notes linked above.
 
@@ -45,7 +45,7 @@ When the VC Playground issues a credential, it generates a CHAPI `store()` event
 
 The VC Playground follows the DID Auth patterns described in the [Verifiable Presentation Request (VPR) spec](https://w3c-ccg.github.io/vp-request-spec/#example-example-get-request).
 
-First, the Playground will send a Verifiable Presentation Request as a "web" credential object using `navigator.credentials.get()`.  Second, your wallet will respond with a Verifiable Presentation,  also as a "web" credential object.  Examples of both the VPR and VP are included in the [wallet developer notes](https://chapi.io/developers/wallets).
+First, the Playground will send a Verifiable Presentation Request as a "web" credential object using `navigator.credentials.get()`.  Second, your wallet will respond with a Verifiable Presentation,  also as a "web" credential object.  Examples of both the VPR and VP are included in the [wallet developer notes](https://chapi.io/chapi/wallets).
 
 The Playground receives the DID Auth, it extracts the value of `holder` and inserts it into the credential being issued.  Then, the credential is issued using the basic CHAPI `store` workflow.
 

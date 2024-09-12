@@ -32,16 +32,16 @@ A _Credential Handler_ is an event handler for credential request and storage ev
 Checkout the examples and developer docs...
 
 <p class="button-row">
-    <a href="developers/issuers" class="btn2">for VC Issuers</a>
-    <a href="developers/wallets" class="btn2">for Digital Wallets</a>
-    <a href="developers/verifiers" class="btn2">for VC Verifiers </a>
+    <a href="chapi/issuers" class="btn2">for VC Issuers</a>
+    <a href="chapi/wallets" class="btn2">for Digital Wallets</a>
+    <a href="chapi/verifiers" class="btn2">for VC Verifiers </a>
 </p>
 
 ## Join the Verifiable Credential Playground
 Interested in making your Verifier/Issuer/Wallet available for experimentation?  See the Integration Guide and FAQ for the [Verifiable Credential Playground](https://vcplayground.org/).
 
 <p class="button-row">
-    <a href="developers/playgroundfaq" class="btn2">VC Playground FAQ</a>
+    <a href="chapi/playgroundfaq" class="btn2">VC Playground FAQ</a>
 </p>
 
 [CHAPI](https://w3c-ccg.github.io/credential-handler-api/) and [Verifiable Credentials](https://www.w3.org/TR/vc-data-model/) are the result of open collaboration through the World Wide Web Consortium (W3C).  You can find more information and join the discussion at the [W3C Credentials Community Group](https://www.w3.org/community/credentials/).

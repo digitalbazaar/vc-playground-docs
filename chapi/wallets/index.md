@@ -1,6 +1,6 @@
 ---
 title: "CHAPI for Web Wallets"
-permalink: /developers/wallets/
+permalink: /chapi/wallets/
 ---
 # CHAPI for Digital Wallets
 CHAPI integrates easily into digital wallet software, allowing your wallet to receive and present Verifiable Credentials to/from third party sites.

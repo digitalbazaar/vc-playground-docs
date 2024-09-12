@@ -1,6 +1,6 @@
 ---
 title: "Handling a VC API Exchange"
-permalink: /developers/wallets/exchanges/
+permalink: /chapi/wallets/exchanges/
 ---
 
 ## {{ title }}

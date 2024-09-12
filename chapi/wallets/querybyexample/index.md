@@ -1,6 +1,6 @@
 ---
 title: "QueryByExample"
-permalink: /developers/wallets/querybyexample/
+permalink: /chapi/wallets/querybyexample/
 ---
 # {{ title }}
 
