@@ -2,9 +2,10 @@
 const { defineConfig, createNotesQuery } = require("./.app/app-config");
 
 module.exports = defineConfig({
-  title: "CHAPI is the Credential Handler API",
+  title: "Verifiable Credentials Documentation",
   description:
-    "An open-source solution for communicating Verifiable Credentials on the Web.",
+    "Documentation covering Verifiable Credentials, Verifiable Presentations, "
+    + "VC API, and CHAPI, the Credential Handler API.",
   editThisNote: {
     url: "https://github.com/digitalbazaar/vc-playground-docs/edit/{{branch}}/{{file}}",
   },
