@@ -56,21 +56,18 @@ module.exports = defineConfig({
             query: createNotesQuery({
               pattern: "^/chapi/issuers/",
             }),
-            expanded: false
           },
           {
             label: "Wallets",
             query: createNotesQuery({
               pattern: "^/chapi/wallets/",
             }),
-            expanded: false
           },
           {
             label: "Verifiers",
             query: createNotesQuery({
               pattern: "^/chapi/verifiers/",
             }),
-            expanded: false
           },
         ],
       },
