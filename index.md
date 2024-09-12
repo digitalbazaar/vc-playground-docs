@@ -1,5 +1,6 @@
 ---
-title: "Verifiable Credential Developer Documentation"
+title: "Home"
+headline: "Verifiable Credentials Documentation"
 permalink: /index.html
 showHero: true
 ---

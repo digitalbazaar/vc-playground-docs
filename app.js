@@ -34,6 +34,16 @@ module.exports = defineConfig({
         ],
       },
       {
+        label: "VC Playground",
+        groups: [
+          {
+            query: createNotesQuery({
+              pattern: "^/playground/[^/]+$",
+            }),
+          },
+        ]
+      },
+      {
         label: "Credential Handler API",
         groups: [
           {
