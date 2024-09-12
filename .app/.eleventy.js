@@ -9,6 +9,7 @@ const tocModule = require("./lib/modules/toc");
 const wikilinksModule = require("./lib/modules/wikilinks");
 const assetsModule = require("./lib/modules/assets");
 const core = require("./lib/core");
+const mermaid = require("./lib/modules/mermaid");
 
 module.exports = (eleventyConfig) => {
   sharedModule.setup(eleventyConfig);
@@ -22,6 +23,7 @@ module.exports = (eleventyConfig) => {
   tocModule.setup(eleventyConfig);
   wikilinksModule.setup(eleventyConfig);
   assetsModule.setup(eleventyConfig);
+  mermaid.setup(eleventyConfig);
 
   core.setup(eleventyConfig);
 
