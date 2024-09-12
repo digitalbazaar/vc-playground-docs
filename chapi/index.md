@@ -2,7 +2,6 @@
 title: "Developer Docs"
 permalink: /chapi/
 ---
-# Credential Handler API Developer Documentation
 
 The Credential Handler API (CHAPI) enables integration with Issuers, Verifiers,
 and Wallets as defined in the [Verifiable Credentials Data Model](https://www.w3.org/TR/vc-data-model/) specification.

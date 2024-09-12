@@ -2,7 +2,6 @@
 title: "Verifying Multiple VCs"
 permalink: /chapi/verifiers/multicredentials/
 ---
-# {{ title }}
 
 The [VC Playground](https://vcplayground.org/) supports the delivery of
 `QueryByExample` requests for doing Multi-Credential Verification as a
