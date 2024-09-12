@@ -5,7 +5,7 @@ const isWatchMode = args.includes("--watch");
 
 const distDir = process.env.ELEVENTY_NOTES_PATH_PREFIX
   ? `./dist/${process.env.ELEVENTY_NOTES_PATH_PREFIX}`
-  : './dist';
+  : './dist/';
 
 let bundler = new Parcel({
   entries: "js/app.js",
@@ -13,7 +13,8 @@ let bundler = new Parcel({
   defaultConfig: "@parcel/config-default",
   targets: {
     default: {
-      distDir
+      distDir,
+      outputFormat: 'esmodule'
     }
   }
 });
