@@ -1,5 +1,5 @@
 ---
-title: "CHAPI is the Credential Handler API"
+title: "Credential Handler API"
 permalink: /index.html
 showHero: true
 ---

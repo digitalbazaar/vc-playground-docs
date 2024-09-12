@@ -1,5 +1,5 @@
 ---
-title: "Developer Docs for Verifying Multiple Verifiable Credentials"
+title: "Verifying Multiple VCs"
 permalink: /developers/verifiers/multicredentials/
 ---
 # {{ title }}

@@ -1,5 +1,5 @@
 ---
-title: "Developer Docs for VC Issuers"
+title: "CHAPI for Issuers"
 permalink: /developers/issuers/
 ---
 # CHAPI for VC Issuers

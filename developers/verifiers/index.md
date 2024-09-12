@@ -1,5 +1,5 @@
 ---
-title: "Developer Docs for VC Verifiers"
+title: "CHAPI for Verifiers"
 permalink: /developers/verifiers/
 ---
 # CHAPI for VC Verifiers

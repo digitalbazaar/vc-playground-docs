@@ -1,5 +1,5 @@
 ---
-title: "Developer Docs for Digital Wallets"
+title: "Developer Docs"
 permalink: /developers/
 ---
 # Credential Handler API Developer Documentation
