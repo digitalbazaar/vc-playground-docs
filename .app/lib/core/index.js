@@ -1,4 +1,7 @@
-const { EleventyHtmlBasePlugin } = require("@11ty/eleventy");
+const {
+  EleventyHtmlBasePlugin,
+  EleventyRenderPlugin
+} = require("@11ty/eleventy");
 const syntaxHighlightPlugin = require("@11ty/eleventy-plugin-syntaxhighlight");
 
 module.exports = {
@@ -12,12 +15,13 @@ module.exports = {
       data: ".app/_data",
       includes: ".app/lib",
     },
-    markdownTemplateEngine: false,
+    markdownTemplateEngine: "njk",
   },
 
   setup(config) {
     config.setLibrary("md", this.mdLibrary(config));
 
+    config.addPlugin(EleventyRenderPlugin);
     config.addPlugin(EleventyHtmlBasePlugin);
     config.addPlugin(syntaxHighlightPlugin);
 
