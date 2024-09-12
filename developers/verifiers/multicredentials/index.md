@@ -4,7 +4,7 @@ permalink: /developers/verifiers/multicredentials/
 ---
 # {{ title }}
 
-The [CHAPI Playground](https://vcplayground.org/) supports the delivery of
+The [VC Playground](https://vcplayground.org/) supports the delivery of
 `QueryByExample` requests for doing Multi-Credential Verification as a
 [Verifiable Credential Verifier](./).
 

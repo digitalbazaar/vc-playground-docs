@@ -9,7 +9,7 @@ Prerequisite: This document assumes completion of the
 
 Responding to requests for credentials from a verifier is a critical step in building out a complete wallet. There are multiple credential query formats, but today we're focusing on Verifiable Presentation Request's `QueryByExample` format.
 
-When integrating with the CHAPI Playground, the JSON sent to the Wallet is in the form of a Verifiable Presentation (VP) Request with one or more QueryByExamples. The payload will be received from the `handleGetEvent` function:
+When integrating with the [VC Playground](https://vcplayground.org/), the JSON sent to the Wallet is in the form of a Verifiable Presentation (VP) Request with one or more QueryByExamples. The payload will be received from the `handleGetEvent` function:
 
 ```js
 async function handleGetEvent() {
@@ -62,7 +62,7 @@ async function handleGetEvent() {
 }
 ```
 
-Below you will find the VP Requests which Wallets may receive when testing used with the [CHAPI Playground](https://vcplayground.org/).
+Below you will find the VP Requests which Wallets may receive when testing used with the [VC Playground](https://vcplayground.org/).
 
 ## VP Request for Alumni VC
 ```json
