@@ -8,7 +8,7 @@ ensureCustomCssExists();
 
 const distDir = process.env.ELEVENTY_NOTES_PATH_PREFIX
   ? `./dist/${process.env.ELEVENTY_NOTES_PATH_PREFIX}`
-  : './dist';
+  : './dist/';
 
 let bundler = new Parcel({
   entries: "css/app.*.scss",
