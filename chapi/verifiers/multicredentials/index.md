@@ -1,6 +1,6 @@
 ---
 title: "Verifying Multiple VCs"
-permalink: /developers/verifiers/multicredentials/
+permalink: /chapi/verifiers/multicredentials/
 ---
 # {{ title }}
 
@@ -85,4 +85,4 @@ Once shared, the process should end with a `VerifiablePresentation` JSON documen
 
 Note that if you pick a credential that you didn't first load into your demo wallet, you'll receive a "Sorry, we can't seem to find any credentials" message. Additionally, you may find a different credential presented if it contains the requested data needed for verification.
 
-Checkout the [`QueryByExample` documentation](/developers/wallets/querybyexample) for examples of how a Verifier may request Wallets to respond with matching credentials.
+Checkout the [`QueryByExample` documentation](/chapi/wallets/querybyexample) for examples of how a Verifier may request Wallets to respond with matching credentials.

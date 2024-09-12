@@ -34,23 +34,23 @@ module.exports = defineConfig({
         ],
       },
       {
-        label: "Implementing CHAPI",
+        label: "Credential Handler API",
         groups: [
           {
             query: createNotesQuery({
-              pattern: "^/developers/[^/]+$",
+              pattern: "^/chapi/[^/]+$",
             }),
           },
           {
             label: "Issuers",
             query: createNotesQuery({
-              pattern: "^/developers/issuers/",
+              pattern: "^/chapi/issuers/",
             }),
           },
           {
             label: "Wallets",
             query: createNotesQuery({
-              pattern: "^/developers/wallets/",
+              pattern: "^/chapi/wallets/",
               tree: {
                 replace: {
                   "^/\\w+/\\w+": "",
@@ -61,7 +61,7 @@ module.exports = defineConfig({
           {
             label: "Verifiers",
             query: createNotesQuery({
-              pattern: "^/developers/verifiers/",
+              pattern: "^/chapi/verifiers/",
             }),
           },
         ],

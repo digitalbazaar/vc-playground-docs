@@ -1,6 +1,6 @@
 ---
 title: "CHAPI for Native Wallet"
-permalink: /developers/wallets/native/
+permalink: /chapi/wallets/native/
 ---
 
 [Back to Wallet Documentation](../)

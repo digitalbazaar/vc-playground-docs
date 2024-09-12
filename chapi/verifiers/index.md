@@ -1,6 +1,6 @@
 ---
 title: "CHAPI for Verifiers"
-permalink: /developers/verifiers/
+permalink: /chapi/verifiers/
 ---
 # CHAPI for VC Verifiers
 CHAPI integrates easily into verifier websites, allowing your site to request Verifiable Credentials from a digital wallet.
