@@ -62,11 +62,6 @@ module.exports = defineConfig({
             label: "Wallets",
             query: createNotesQuery({
               pattern: "^/chapi/wallets/",
-              tree: {
-                replace: {
-                  "^/\\w+/\\w+": "",
-                },
-              },
             }),
             expanded: false
           },
