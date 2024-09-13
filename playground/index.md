@@ -1,6 +1,6 @@
 ---
 title: "Integration Guide"
-permalink: /chapi/playgroundfaq/
+permalink: /playground/
 ---
 
 Have you already integrated CHAPI into your project and now you’re interested in making your Issuer, Wallet, or Verifier available for experimentation? This Integration Guide/FAQ for the [VC Playground](https://vcplayground.org/) will help you accomplish this!
