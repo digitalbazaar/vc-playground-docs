@@ -22,6 +22,13 @@ module.exports = defineConfig({
     ],
   },
   sidebar: {
+    links: [
+      {
+        url: "https://vcplayground.org/",
+        label: "VC Playground",
+        icon: "play",
+      }
+    ],
     sections: [
       {
         label: "Introduction",
