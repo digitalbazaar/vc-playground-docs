@@ -79,18 +79,18 @@ The *Multiple Protocols* option provides an interaction URL that will provide a
 `protocols` object allowing for the selection from the available protocols:
 
 ```
-https://playground.alpha.chapi.io/interactions/H4sIAAAAAAAAA3WPywrCMBBF_yXQnbb4qI-CSBfWgiioIO5KTSYaLU2axmgV_91YwYpYmMXcO2dx5o6E5IpjnuTIuyPOSFdjhjzEBaSMNLEEAqlicdLklIL0HGdcdVHZRWfJRgelRG51fKsdmMliW4OEHK74EKd7kDYBbfpPzk24tfzegM0yvG2Hu-V0STdrGqTH0_wLfHPD401fCF679Lwoikl_5SpXQGhub02z_IqiBtI4Fq9XSjUj_lfKqZScWqEP9GJqZNDj8QSZK-qjTQEAAA
+https://playground.alpha.chapi.io/interactions/https%3A%2F%2Fqa.veresexchanger.dev%2Fexchangers%2Fz1A68iKqcX2HbQGQfVSfFnjkM%2Fexchanges%2Fz19jzvwdcS5fuNyyE7R5t5peH
 ```
 
 Note: if this URL is opened in a browser it will result in a human friendly
 error page showing the same QR code again explaining that it is intended to be
 used by Wallet software.
 
-A properly built Wallet will send a `POST` request to the interaction URL with an
+A properly built Wallet will send a `GET` request to the interaction URL with an
 `Accept` header set to `application/json`:
 
 ```http
-POST /interactions/H4sIAAAAAAAAA3WPywrCMBBF_yXQnbb4qI-CSBfWgiioIO5KTSYaLU2axmgV_91YwYpYmMXcO2dx5o6E5IpjnuTIuyPOSFdjhjzEBaSMNLEEAqlicdLklIL0HGdcdVHZRWfJRgelRG51fKsdmMliW4OEHK74EKd7kDYBbfpPzk24tfzegM0yvG2Hu-V0STdrGqTH0_wLfHPD401fCF679Lwoikl_5SpXQGhub02z_IqiBtI4Fq9XSjUj_lfKqZScWqEP9GJqZNDj8QSZK-qjTQEAAA
+POST /interactions/https%3A%2F%2Fqa.veresexchanger.dev%2Fexchangers%2Fz1A68iKqcX2HbQGQfVSfFnjkM%2Fexchanges%2Fz19jzvwdcS5fuNyyE7R5t5peH
 Host: playground.alpha.chapi.io
 Accept: application/json
 ```
@@ -98,9 +98,9 @@ Accept: application/json
 Here is an example of that request using JavaScript's `fetch()` function:
 
 ```js
-const interactionUrl = 'https://playground.alpha.chapi.io/interactions/H4sIAAAAAAAAA3WPywrCMBBF_yXQnbb4qI-CSBfWgiioIO5KTSYaLU2axmgV_91YwYpYmMXcO2dx5o6E5IpjnuTIuyPOSFdjhjzEBaSMNLEEAqlicdLklIL0HGdcdVHZRWfJRgelRG51fKsdmMliW4OEHK74EKd7kDYBbfpPzk24tfzegM0yvG2Hu-V0STdrGqTH0_wLfHPD401fCF679Lwoikl_5SpXQGhub02z_IqiBtI4Fq9XSjUj_lfKqZScWqEP9GJqZNDj8QSZK-qjTQEAAA';
+const interactionUrl = 'https://playground.alpha.chapi.io/interactions/https%3A%2F%2Fqa.veresexchanger.dev%2Fexchangers%2Fz1A68iKqcX2HbQGQfVSfFnjkM%2Fexchanges%2Fz19jzvwdcS5fuNyyE7R5t5peH';
 const rv = await fetch(interactionUrl, {
-  method: 'POST',
+  method: 'GET',
   headers: {
     Accept: 'application/json'
   }
