@@ -90,7 +90,7 @@ A properly built Wallet will send a `GET` request to the interaction URL with an
 `Accept` header set to `application/json`:
 
 ```http
-POST /interactions/https%3A%2F%2Fqa.veresexchanger.dev%2Fexchangers%2Fz1A68iKqcX2HbQGQfVSfFnjkM%2Fexchanges%2Fz19jzvwdcS5fuNyyE7R5t5peH
+GET /interactions/https%3A%2F%2Fqa.veresexchanger.dev%2Fexchangers%2Fz1A68iKqcX2HbQGQfVSfFnjkM%2Fexchanges%2Fz19jzvwdcS5fuNyyE7R5t5peH
 Host: vcplayground.org
 Accept: application/json
 ```
