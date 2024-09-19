@@ -79,7 +79,7 @@ The *Multiple Protocols* option provides an interaction URL that will provide a
 `protocols` object allowing for the selection from the available protocols:
 
 ```
-https://playground.alpha.chapi.io/interactions/https%3A%2F%2Fqa.veresexchanger.dev%2Fexchangers%2Fz1A68iKqcX2HbQGQfVSfFnjkM%2Fexchanges%2Fz19jzvwdcS5fuNyyE7R5t5peH
+https://vcplayground.org/interactions/https%3A%2F%2Fqa.veresexchanger.dev%2Fexchangers%2Fz1A68iKqcX2HbQGQfVSfFnjkM%2Fexchanges%2Fz19jzvwdcS5fuNyyE7R5t5peH
 ```
 
 Note: if this URL is opened in a browser it will result in a human friendly
@@ -91,14 +91,14 @@ A properly built Wallet will send a `GET` request to the interaction URL with an
 
 ```http
 POST /interactions/https%3A%2F%2Fqa.veresexchanger.dev%2Fexchangers%2Fz1A68iKqcX2HbQGQfVSfFnjkM%2Fexchanges%2Fz19jzvwdcS5fuNyyE7R5t5peH
-Host: playground.alpha.chapi.io
+Host: vcplayground.org
 Accept: application/json
 ```
 
 Here is an example of that request using JavaScript's `fetch()` function:
 
 ```js
-const interactionUrl = 'https://playground.alpha.chapi.io/interactions/https%3A%2F%2Fqa.veresexchanger.dev%2Fexchangers%2Fz1A68iKqcX2HbQGQfVSfFnjkM%2Fexchanges%2Fz19jzvwdcS5fuNyyE7R5t5peH';
+const interactionUrl = 'https://vcplayground.org/interactions/https%3A%2F%2Fqa.veresexchanger.dev%2Fexchangers%2Fz1A68iKqcX2HbQGQfVSfFnjkM%2Fexchanges%2Fz19jzvwdcS5fuNyyE7R5t5peH';
 const rv = await fetch(interactionUrl, {
   method: 'GET',
   headers: {
