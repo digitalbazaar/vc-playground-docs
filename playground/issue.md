@@ -77,7 +77,7 @@ from within a Wallet and not meant to be loaded in a browser.
 
 The *Multiple Protocols (via VC API)* option provides an interaction URL that
 will provide a `protocols` object allowing for the selection from the available
-protocols:
+protocols (e.g., VC API, OID4*):
 
 ```
 https://vcplayground.org/interactions/https%3A%2F%2Fqa.veresexchanger.dev%2Fexchangers%2Fz1A68iKqcX2HbQGQfVSfFnjkM%2Fexchanges%2Fz19jzvwdcS5fuNyyE7R5t5peH
@@ -123,7 +123,7 @@ transaction via that protocol.
 Checkout [Handling a VC API Exchange](/chapi/wallets/exchanges/) for further
 information on completing an exchange.
 
-Alternatively, the OID4VCI QR code will provide a URL with the
+Alternatively, the OID4VCI QR code will provide only the OID4VCI-specific URL using the
 `openid-credential-offer://` scheme:
 
 ```
