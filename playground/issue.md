@@ -75,8 +75,9 @@ Press the "Generate a QR Code" button to show the QR code options dialog:
 Each QR code will provide a single URL. However, these URLs are meant to be used
 from within a Wallet and not meant to be loaded in a browser.
 
-The *Multiple Protocols* option provides an interaction URL that will provide a
-`protocols` object allowing for the selection from the available protocols:
+The *Multiple Protocols (via VC API)* option provides an interaction URL that
+will provide a `protocols` object allowing for the selection from the available
+protocols:
 
 ```
 https://vcplayground.org/interactions/https%3A%2F%2Fqa.veresexchanger.dev%2Fexchangers%2Fz1A68iKqcX2HbQGQfVSfFnjkM%2Fexchanges%2Fz19jzvwdcS5fuNyyE7R5t5peH
@@ -119,22 +120,15 @@ const json = await rv.json();
 The Wallet should select the value of the protocol it prefers and continue the
 transaction via that protocol.
 
-Alternatively, each of the other QR codes will result in URL only values
-identical to the ones seen in the above JSON.
+Checkout [Handling a VC API Exchange](/chapi/wallets/exchanges/) for further
+information on completing an exchange.
 
-The OID4VC QR code will provide a URL with the `openid-credential-offer://`
-scheme:
+Alternatively, the OID4VCI QR code will provide a URL with the
+`openid-credential-offer://` scheme:
 
 ```
 openid-credential-offer://?credential_offer_uri=https%3A%2F%2Fqa.veresexchanger.dev%2Fexchangers%2Fz1A68iKqcX2HbQGQfVSfFnjkM%2Fexchanges%2Fz19jzvwdcS5fuNyyE7R5t5peH%2Fopenid%2Fcredential-offer
 ```
 
-The VC API QR code will provide an HTTPS Exchange URL which can be used
-following the
-[VC API Workflows & Exchanges specification](https://w3c-ccg.github.io/vc-api/#workflows-and-exchanges).
-
-```
-https://qa.veresexchanger.dev/exchangers/z1A68iKqcX2HbQGQfVSfFnjkM/exchanges/z19jzvwdcS5fuNyyE7R5t5peH
-```
-
-Checkout [Handling a VC API Exchange](/chapi/wallets/exchanges/) for more info.
+Read [Sending Credential Offer by Reference Using `credential_offer_uri` Parameter](https://openid.net/specs/openid-4-verifiable-credential-issuance-1_0.html#name-sending-credential-offer-by-) in the OID4VCI specification for further
+details.
