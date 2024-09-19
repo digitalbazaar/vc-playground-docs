@@ -130,5 +130,6 @@ Alternatively, the OID4VCI QR code will provide a URL with the
 openid-credential-offer://?credential_offer_uri=https%3A%2F%2Fqa.veresexchanger.dev%2Fexchangers%2Fz1A68iKqcX2HbQGQfVSfFnjkM%2Fexchanges%2Fz19jzvwdcS5fuNyyE7R5t5peH%2Fopenid%2Fcredential-offer
 ```
 
-Read [Sending Credential Offer by Reference Using `credential_offer_uri` Parameter](https://openid.net/specs/openid-4-verifiable-credential-issuance-1_0.html#name-sending-credential-offer-by-) in the OID4VCI specification for further
-details.
+Read
+[Sending Credential Offer by Reference Using `credential_offer_uri` Parameter](https://openid.net/specs/openid-4-verifiable-credential-issuance-1_0-ID1.html#name-sending-credential-offer-by-)
+in the OID4VCI specification for further details.
