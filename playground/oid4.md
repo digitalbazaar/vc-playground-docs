@@ -2,6 +2,9 @@
 title: OID4* Integration
 ---
 
+> [!warning]
+> These details are subject to change as we iron out this integration approach.
+
 The OID4VCI and OID4VP protocols require a high level or coordination between
 relying parties, authentication servers, and credential issuing/verifying
 services. To avoid on going overhead for joining the VC Playground, the
