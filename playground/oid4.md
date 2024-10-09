@@ -18,9 +18,10 @@ We've extracted the minimal bit for
 to provide this capability.
 
 First, setup an HTTP endpoint to accept a POST request. This endpoint can
-be zcap- or oauth-protected if desired; the appropriate authorization tokens
-or credentials must be provided to the playground for integration. This endpoint
-will receive a payload similar to the following when an issue request is made:
+be [ZCAP](https://w3c-ccg.github.io/zcap-spec/) or OAuth-protected if desired;
+the appropriate authorization tokens or credentials must be provided to the
+playground for integration. This endpoint will receive a payload similar to the
+following when an issue request is made:
 
 ```js
 {
@@ -59,7 +60,9 @@ exchange (in VC API terminology). This endpoint MUST NOT be authorization-protec
 and MUST be a capability URL, i.e., it must include sufficient pseudo-randomness
 (e.g., a UUID) somewhere in its path, for example:
 
-`https://my-oid4-service.example/workflows/<uuid1>/exchanges/<uuid2>`
+```
+https://my-oid4-service.example/workflows/<uuid1>/exchanges/<uuid2>
+```
 
 The VC Playground will use the value of the `Location` header, append
 `/protocols` to that URL, and send a GET request to that full URL.
@@ -68,7 +71,7 @@ The response from your system would be a simple JSON object stating support for
 OID4VCI (or OID4VP) plus the value needed to continue the OID4* flow. The
 response should look structurally like the following:
 
-```jsonc
+```js
 {
   "protocols": {
     // or OID4VP if doing verification
