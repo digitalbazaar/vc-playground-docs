@@ -72,7 +72,8 @@ Once the POST request is received, the response can have an empty body, but it
 must provide a `Location` header containing the "exchange ID"--the URL of the
 exchange (in VC API terminology). This endpoint MUST NOT be
 authorization-protected and MUST be a capability URL, i.e., it must include
-sufficient pseudo-randomness (e.g., a UUID) somewhere in its path, for example:
+sufficient pseudo-randomness (e.g., a UUID) for the particular exchange, for example,
+replace `<uuid2>` with a UUID in the example below:
 
 ```
 https://my-oid4-service.example/workflows/<uuid1>/exchanges/<uuid2>
