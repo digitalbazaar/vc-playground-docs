@@ -8,8 +8,10 @@ title: OID4* Integration
 The OID4VCI and OID4VP protocols require a high level or coordination between
 relying parties, authentication servers, and credential issuing/verifying
 services. To avoid on going overhead for joining the VC Playground, the
-following minimal code can be hosted to provide a VC API Exchange to wrap the
-OID4* protocols to more easily connect the VC Playground to your services.
+following minimal code can be hosted to provide a
+[VC API Exchange](https://w3c-ccg.github.io/vc-api/#workflows-and-exchanges:~:text=An%20issuer%2C%20verifier%2C%20or%20holder%20coordinator%20is%20responsible%20for%20creating%20exchanges.)
+to wrap the OID4* protocols to more easily connect the VC Playground to your
+services.
 
 ## Minimal Server Setup
 
