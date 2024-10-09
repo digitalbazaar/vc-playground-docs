@@ -22,8 +22,19 @@ to provide this capability.
 First, setup an HTTP endpoint to accept a POST request. This endpoint can
 be [ZCAP](https://w3c-ccg.github.io/zcap-spec/) or OAuth-protected if desired;
 the appropriate authorization tokens or credentials must be provided to the
-playground for integration. This endpoint will receive a payload similar to the
-following when an issue request is made:
+playground for integration.
+
+The URL should look something like the following:
+
+```
+https://my-oid4-service.example/workflows/<uuid1>/exchanges
+```
+
+NOTE: if your system does not offer a full VC API Workflow setup, then replace
+the `<uuid1>` value in the above URL with a static UUID.
+
+This exchanges endpoint will receive a payload similar to the following when an
+issue request is made:
 
 ```js
 {
