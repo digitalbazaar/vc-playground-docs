@@ -17,9 +17,10 @@ We've extracted the minimal bit for
 [creating an exchange from VC API Exchanges](https://w3c-ccg.github.io/vc-api/#create-exchange)
 to provide this capability.
 
-First, setup an HTTP endpoint to accept a POST request. That endpoint will
-currently receive a payload similar to the following when an issue request is
-made:
+First, setup an HTTP endpoint to accept a POST request. This endpoint can
+be zcap- or oauth-protected if desired; the appropriate authorization tokens
+or credentials must be provided to the playground for integration. This endpoint
+will receive a payload similar to the following when an issue request is made:
 
 ```js
 {
@@ -52,9 +53,13 @@ made:
 NOTE: the `credential_definition` list can be populated from the
 [vc-examples repo](https://github.com/credential-handler/vc-examples/).
 
-Once the POST request is received, the response should have an empty body, but
-provide a `Location` header containing the "exchange ID"--the URL of the
-exchange (in VC API terminology).
+Once the POST request is received, the response can have an empty body, but
+it must provide a `Location` header containing the "exchange ID"--the URL of the
+exchange (in VC API terminology). This endpoint MUST NOT be authorization-protected
+and MUST be a capability URL, i.e., it must include sufficient pseudo-randomness
+(e.g., a UUID) somewhere in its path, for example:
+
+`https://my-oid4-service.example/workflows/<uuid1>/exchanges/<uuid2>`
 
 The VC Playground will use the value of the `Location` header, append
 `/protocols` to that URL, and send a GET request to that full URL.
@@ -72,5 +77,8 @@ response should look structurally like the following:
 }
 ```
 
-Once that OID4* URL is provide to the Playground, the communication will
+The playground will use the above object to allow compatible digital wallets
+to interact with your service in a variety of ways: CHAPI, multiprotocol
+URL / QR code, and OID4* URL / QR code. Once delivered using one of these
+mechanisms, the communication will
 continue over either OID4VCI (for issuing) or OID4VP (for verifying).
