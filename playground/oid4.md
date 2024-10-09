@@ -1,5 +1,6 @@
 ---
 title: OID4* Integration
+permalink: /playground/oid4/
 ---
 
 > [!warning]
