@@ -98,3 +98,61 @@ interact with your service in a variety of ways: CHAPI, multiprotocol URL / QR
 code, and OID4* URL / QR code. Once delivered using one of these mechanisms, the
 communication will continue over either OID4VCI (for issuing) or OID4VP (for
 verifying).
+
+## User Journey and HTTP Flow
+
+The VC Playground provides two options for selecting an OID4-based flow:
+- CHAPI-based via the "cog" menu
+- QR code-based via the "Generate a QR Code" link
+
+In either case, the user will have the option to select the exchange endpoint
+described above. When the user initiates an issuance flow with that exchange
+endpoint selected, the following HTTP communication will take place.
+
+#### VC Playground
+
+VC Playground sends the initial exchange create request.
+
+```http
+POST /workflows/<uuid1>/exchanges
+Host: my-oid4-service.example
+```
+
+#### Exchange Endpoint Response
+
+The exchange endpoint responds with new exchange URL which MUST be a time
+limited capability URL (hence ending in a UUID):
+
+```http
+HTTP/1.1 200 OK
+Location: https://my-oid4-service.example/workflows/<uuid1>/exchanges/<uuid2>
+```
+
+#### VC Playground
+
+VC Playground retrieves the protocols object:
+
+```http
+GET /workflows/<uuid1>/exchanges/<uuid2>/protocols
+Host: my-oid4-service.example
+```
+
+#### Exchange Endpoint Response
+
+The exchange endpoint provides the `protocols` object containing the OID4-based
+URL for further use by the VC Playground to either pass on to the user selected
+Wallet via CHAPI or to show in a QR code:
+
+```http
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+{
+  "protocols": {
+    "OID4VCI": "..."
+  }
+}
+```
+
+NOTE: the `OID4VCI` key name above would be `OID4VP` when processing a
+verification request.
