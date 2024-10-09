@@ -54,11 +54,11 @@ following when an issue request is made:
 NOTE: the `credential_definition` list can be populated from the
 [vc-examples repo](https://github.com/credential-handler/vc-examples/).
 
-Once the POST request is received, the response can have an empty body, but
-it must provide a `Location` header containing the "exchange ID"--the URL of the
-exchange (in VC API terminology). This endpoint MUST NOT be authorization-protected
-and MUST be a capability URL, i.e., it must include sufficient pseudo-randomness
-(e.g., a UUID) somewhere in its path, for example:
+Once the POST request is received, the response can have an empty body, but it
+must provide a `Location` header containing the "exchange ID"--the URL of the
+exchange (in VC API terminology). This endpoint MUST NOT be
+authorization-protected and MUST be a capability URL, i.e., it must include
+sufficient pseudo-randomness (e.g., a UUID) somewhere in its path, for example:
 
 ```
 https://my-oid4-service.example/workflows/<uuid1>/exchanges/<uuid2>
@@ -80,8 +80,8 @@ response should look structurally like the following:
 }
 ```
 
-The playground will use the above object to allow compatible digital wallets
-to interact with your service in a variety of ways: CHAPI, multiprotocol
-URL / QR code, and OID4* URL / QR code. Once delivered using one of these
-mechanisms, the communication will
-continue over either OID4VCI (for issuing) or OID4VP (for verifying).
+The playground will use the above object to allow compatible digital wallets to
+interact with your service in a variety of ways: CHAPI, multiprotocol URL / QR
+code, and OID4* URL / QR code. Once delivered using one of these mechanisms, the
+communication will continue over either OID4VCI (for issuing) or OID4VP (for
+verifying).
