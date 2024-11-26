@@ -3,6 +3,12 @@ title: OID4* Integration
 permalink: /playground/oid4/
 ---
 
+The Verifiable Credentials Playground supports the following versions of the OID
+in-progress draft specifications:
+
+* [ID-1 of OID4VCI (draft 13)](https://openid.net/specs/openid-4-verifiable-credential-issuance-1_0-ID1.html)
+* [ID-2 of OID4VP (draft 18)](https://openid.net/specs/openid-4-verifiable-presentations-1_0-ID2.html)
+
 > [!warning]
 > These details are subject to change as we iron out this integration approach.
 
