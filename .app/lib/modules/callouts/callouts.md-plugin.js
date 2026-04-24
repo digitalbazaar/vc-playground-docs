@@ -1,10 +1,9 @@
-const { icons } = require("feather-icons");
-const chevronDown = icons["chevron-down"].toSvg({
-  width: "1.125em",
-  height: "1.125em",
-});
+import { ChevronDown } from "lucide";
+import { calloutTypes } from "./callout-types.js";
+import { sharedModule } from "./../../shared/index.js";
 
-const calloutTypes = require("./callout-types");
+const expandIcon = sharedModule.createIcon(ChevronDown);
+
 const markers = Object.keys(calloutTypes);
 const markerNames = markers.join("|");
 const regex = new RegExp(
@@ -12,7 +11,7 @@ const regex = new RegExp(
   "i"
 );
 
-module.exports = (md) => {
+export const calloutsMarkdownPlugin = (md) => {
   md.core.ruler.after("block", "callouts", block);
   md.renderer.rules.callout_open = renderCalloutOpen;
   md.renderer.rules.callout_title_open = renderTitleOpen;
@@ -158,7 +157,7 @@ module.exports = (md) => {
     const { meta, tag } = tokens[idx];
 
     if (!meta.foldable) return `</div></${tag}>`;
-    return `</div><div class="callout__foldable">${chevronDown}</div></${tag}>`;
+    return `</div><div class="callout__foldable">${expandIcon}</div></${tag}>`;
   }
 
   function renderCalloutContentOpen() {

@@ -20,39 +20,31 @@ export interface AppConfig {
   lang?: string;
 
   /**
-   * The theme configuration.
-   * @default { color: "sky" }
+   * Configuration for static assets.
    */
-  theme?: {
+  staticAssets?: {
     /**
-     * The primary color of the app.
-     * @default sky
+     * Static assets that are copied to the output folder.
+     *
+     * The value should be one of the following:
+     * - A string with a file or folder path.
+     * - A list of strings with file or folder paths.
+     * - A key-value object where the key is the input path and the value is the output path.
+     *
+     * Globs are supported in the input path.
+     *
+     * @example "assets/"
+     * @example "documents/*.pdf"
+     * @example ["assets/", "public/"]
+     * @example { "_assets/": "assets/", "public/": "/" }
      */
-    color:
-      | "tomato"
-      | "red"
-      | "ruby"
-      | "crimson"
-      | "pink"
-      | "plum"
-      | "purple"
-      | "violet"
-      | "iris"
-      | "indigo"
-      | "blue"
-      | "sky"
-      | "cyan"
-      | "teal"
-      | "jade"
-      | "mint"
-      | "green"
-      | "grass"
-      | "lime"
-      | "yellow"
-      | "amber"
-      | "orange"
-      | "brown";
+    paths?: string | string[] | Record<string, string>;
   };
+
+  /**
+   * A list of paths that should be ignored by Eleventy.
+   */
+  ignores?: string[];
 
   /**
    * The configuration for custom properties.
@@ -80,6 +72,13 @@ export interface AppConfig {
       label?: string;
 
       /**
+       * The template used to render the property value.
+       * It supports Nunjucks and Markdown syntax and
+       * has access to `value` and `formattedValue` variables.
+       */
+      template?: string;
+
+      /**
        * Configuration options for the property value.
        */
       options?: {
@@ -87,16 +86,16 @@ export interface AppConfig {
          * Configuration options for date values.
          */
         date?: {
-          locale?: string;
-          format?: object;
+          locale?: Intl.LocalesArgument;
+          format?: Intl.DateTimeFormatOptions;
         };
 
         /**
          * Configuration options for numeric values.
          */
         number?: {
-          locale?: string;
-          format?: object;
+          locale?: Intl.LocalesArgument;
+          format?: Intl.NumberFormatOptions;
         };
       };
     }>;
@@ -140,7 +139,7 @@ export interface AppConfig {
 
       /**
        * The icon of the link.
-       * See https://feathericons.com/ for a list of icons.
+       * See https://lucide.dev/icons/ for a list of icons.
        */
       icon: string;
 
@@ -226,6 +225,20 @@ export interface AppConfig {
   };
 
   /**
+   * The configuration for the page navigation.
+   */
+  pageNav?: {
+    /**
+     * Controls the display of page navigation.
+     * - "on": Display page navigation based on sidebar and frontmatter configuration.
+     * - "manual": Display page navigation based on frontmatter configuration only.
+     * - "off": Do not display page navigation.
+     * @default "on"
+     */
+    mode?: "on" | "off" | "manual";
+  };
+
+  /**
    * The configuration for wikilinks.
    * @default { autoLabel: "ref", anchorLabel: "none" }
    */
@@ -247,7 +260,7 @@ export interface AppConfig {
    * The configuration for tags.
    * @default { map: {} }
    */
-  tags: {
+  tags?: {
     /**
      * A key-value object mapping each tag to a different display name.
      */

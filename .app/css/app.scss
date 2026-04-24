@@ -1,28 +1,40 @@
-@import "./3-global/remedy";
-@import "./3-global/theme-mode";
-@import "./3-global/kbd";
+@use "sass:map";
+@use "sass:meta";
 
-@import "./4-components/code-block";
-@import "./4-components/icon-btn";
-@import "./4-components/note-link";
-@import "./4-components/toggle-btn";
+@use "./../../app" as app;
 
-@import "./../lib/core/styles";
-@import "./../lib/modules/callouts/styles";
-@import "./../lib/modules/custom-props/styles";
-@import "./../lib/modules/notes/styles";
-@import "./../lib/modules/search/styles";
-@import "./../lib/modules/sidebar/styles";
-@import "./../lib/modules/tags/styles";
-@import "./../lib/modules/themes/styles";
-@import "./../lib/modules/toc/styles";
-@import "./../lib/shared/styles";
+@layer app {
+  @include meta.load-css(
+    "./1-tokens/tokens",
+    $with: (theme-name: map.get(app.$config, "theme"))
+  );
 
-@import "./5-utils/cloak";
-@import "./5-utils/hide";
-@import "./5-utils/inline";
-@import "./5-utils/show";
-@import "./5-utils/stack";
-@import "./5-utils/visually-hidden";
+  @include meta.load-css("./3-global/remedy");
+  @include meta.load-css("./3-global/theme-mode");
+  @include meta.load-css("./3-global/kbd");
 
-@import "./../../app.styles.scss";
+  @include meta.load-css("./4-components/code-block");
+  @include meta.load-css("./4-components/icon-btn");
+  @include meta.load-css("./4-components/note-link");
+  @include meta.load-css("./4-components/toggle-btn");
+
+  @include meta.load-css("./../lib/core/styles");
+  @include meta.load-css("./../lib/modules/callouts/styles");
+  @include meta.load-css("./../lib/modules/custom-props/styles");
+  @include meta.load-css("./../lib/modules/notes/styles");
+  @include meta.load-css("./../lib/modules/page-nav/styles");
+  @include meta.load-css("./../lib/modules/panel/styles");
+  @include meta.load-css("./../lib/modules/search/styles");
+  @include meta.load-css("./../lib/modules/sidebar/styles");
+  @include meta.load-css("./../lib/modules/tags/styles");
+  @include meta.load-css("./../lib/modules/themes/styles");
+  @include meta.load-css("./../lib/modules/toc/styles");
+  @include meta.load-css("./../lib/shared/styles");
+
+  @include meta.load-css("./5-utils/cloak");
+  @include meta.load-css("./5-utils/hide");
+  @include meta.load-css("./5-utils/inline");
+  @include meta.load-css("./5-utils/show");
+  @include meta.load-css("./5-utils/stack");
+  @include meta.load-css("./5-utils/visually-hidden");
+}

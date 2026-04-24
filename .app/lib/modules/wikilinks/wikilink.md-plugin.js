@@ -1,7 +1,7 @@
-const html = require("nanohtml");
-const Wikilink = require("./wikilink");
+import html from "nanohtml";
+import { Wikilink } from "./wikilink.js";
 
-module.exports = (md, options) => {
+export const wikilinksMarkdownPlugin = (md, options) => {
   md.inline.ruler.after("link", "wikilink", inline);
   md.renderer.rules["wikilink"] = render;
 
@@ -31,8 +31,10 @@ module.exports = (md, options) => {
     const wikilink = new Wikilink(
       env.collections[options.collections],
       env.app.wikilinks,
-      options.slugify,
-      options.slugifyAnchor
+      {
+        slugify: options.slugify,
+        slugifyAnchor: options.slugifyAnchor,
+      }
     );
 
     const [, path, , text] = match;
