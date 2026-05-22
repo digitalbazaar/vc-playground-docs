@@ -132,12 +132,12 @@ openid-credential-offer://?credential_offer_uri=https%3A%2F%2Fqa.veresexchanger.
 ```
 
 Read
-[Sending Credential Offer by Reference Using `credential_offer_uri` Parameter](https://openid.net/specs/openid-4-verifiable-credential-issuance-1_0-ID1.html#name-sending-credential-offer-by-)
+[Sending Credential Offer by Reference Using `credential_offer_uri` Parameter](https://openid.net/specs/openid-4-verifiable-credential-issuance-1_0.html#name-sending-credential-offer-by-)
 in the OID4VCI specification for further details.
 
 The VC API QR code will provide an HTTPS Exchange URL which can be used
 following the
-[VC API Workflows & Exchanges specification](https://w3c-ccg.github.io/vc-api/#workflows-and-exchanges).
+[VCALM Workflows & Exchanges specification](https://www.w3.org/TR/vcalm/#workflows-and-exchanges).
 
 ```
 https://qa.veresexchanger.dev/exchangers/z1A68iKqcX2HbQGQfVSfFnjkM/exchanges/z19jzvwdcS5fuNyyE7R5t5peH

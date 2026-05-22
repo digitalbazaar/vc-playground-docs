@@ -5,8 +5,13 @@ title: Verifiable Presentation Requests
 When working with Verifiable Credentials, Decentralized Identifier (DID) based
 Authentication, and Authorization Capabilities, a client application often needs
 to request credential-related objects from a wallet or agent.  [Verifiable
-Presentation Requests](https://w3c-ccg.github.io/vp-request-spec/) provide a
+Presentation Requests](https://www.w3.org/TR/vcalm/#verifiable-presentation-request) provide a
 format for making those requests between parties.
+
+> **Note:** The standalone Verifiable Presentation Request specification has been
+> superseded. VPR is now defined in the
+> [VCALM (Verifiable Credentials API Lifecycle Management)](https://www.w3.org/TR/vcalm/)
+> specification.
 
 ## Examples
 
@@ -25,7 +30,7 @@ Requests (VPRs) sent in CHAPI events or retrieved during a VC API Exchange.
   "domain": "example.com"
 }
 ```
-https://w3c-ccg.github.io/vp-request-spec/#did-authentication
+https://www.w3.org/TR/vcalm/#did-authentication
 
 ### QueryByExample
 
@@ -82,4 +87,4 @@ https://w3c-ccg.github.io/vp-request-spec/#did-authentication
   "domain": "jobs.example.com"
 }
 ```
-https://w3c-ccg.github.io/vp-request-spec/#query-by-example
+https://www.w3.org/TR/vcalm/#query-by-example

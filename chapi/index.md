@@ -4,7 +4,7 @@ permalink: /chapi/
 ---
 
 The Credential Handler API (CHAPI) enables integration with Issuers, Verifiers,
-and Wallets as defined in the [Verifiable Credentials Data Model](https://www.w3.org/TR/vc-data-model/) specification.
+and Wallets as defined in the [Verifiable Credentials Data Model](https://www.w3.org/TR/vc-data-model-2.0/) specification.
 
 ## [Issuers](/chapi/issuers/)
 a role an entity can perform by asserting claims about one or more subjects, creating a verifiable credential from these claims, and transmitting the verifiable credential to a holder.

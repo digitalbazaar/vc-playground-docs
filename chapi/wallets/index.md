@@ -177,8 +177,8 @@ When credentials are requested, wallets should show the user what will be shared
 This section is written from the perspective of web wallets.  CHAPI provides a simple method for a 3rd party website to request an individual present their Decentralized Identifier (DID) and prove their identity.  The individual selects a digital wallet to respond to this DID Authentication request.
 
 ### Resources
-- [Verifiable Presentation Request](https://w3c-ccg.github.io/vp-request-spec/#did-authentication)
-- [Verifiable Credentials Data Model](https://www.w3.org/TR/vc-data-model/#presentations)
+- [Verifiable Presentation Request](https://www.w3.org/TR/vcalm/#did-authentication)
+- [Verifiable Credentials Data Model](https://www.w3.org/TR/vc-data-model-2.0/#presentations)
 - [DID Core Specification](https://www.w3.org/TR/did-core/#authentication)
 
 #### 1. The 3rd Party Site sends a DID Authentication Request

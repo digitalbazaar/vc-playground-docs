@@ -3,11 +3,10 @@ title: OID4* Integration
 permalink: /playground/oid4/
 ---
 
-The Verifiable Credentials Playground supports the following versions of the OID
-in-progress draft specifications:
+The Verifiable Credentials Playground supports the following final specifications:
 
-* [ID-1 of OID4VCI (draft 13)](https://openid.net/specs/openid-4-verifiable-credential-issuance-1_0-ID1.html)
-* [ID-2 of OID4VP (draft 18)](https://openid.net/specs/openid-4-verifiable-presentations-1_0-ID2.html)
+* [OID4VCI 1.0](https://openid.net/specs/openid-4-verifiable-credential-issuance-1_0.html)
+* [OID4VP 1.0](https://openid.net/specs/openid-4-verifiable-presentations-1_0.html)
 
 > [!warning]
 > These details are subject to change as we iron out this integration approach.
@@ -16,14 +15,14 @@ The OID4VCI and OID4VP protocols require a high level or coordination between
 relying parties, authentication servers, and credential issuing/verifying
 services. To avoid on going overhead for joining the VC Playground, the
 following minimal code can be hosted to provide a
-[VC API Exchange](https://w3c-ccg.github.io/vc-api/#workflows-and-exchanges:~:text=An%20issuer%2C%20verifier%2C%20or%20holder%20coordinator%20is%20responsible%20for%20creating%20exchanges.)
+[VCALM Exchange](https://www.w3.org/TR/vcalm/#workflows-and-exchanges)
 to wrap the OID4* protocols to more easily connect the VC Playground to your
 services.
 
 ## Minimal Server Setup
 
 We've extracted the minimal bit for
-[creating an exchange from VC API Exchanges](https://w3c-ccg.github.io/vc-api/#create-exchange)
+[creating an exchange from VCALM Exchanges](https://www.w3.org/TR/vcalm/#create-exchange)
 to provide this capability.
 
 First, setup an HTTP endpoint to accept a POST request. This endpoint can

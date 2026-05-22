@@ -40,7 +40,7 @@ console.log('Ready to work with credentials!');
 ```
 ## Construct a Web Credential Query
 #### 1. Make a Verifiable Presentation Request
-A verifier can request credentials over CHAPI by forming a *[Verifiable Presentation Request](https://w3c-ccg.github.io/vp-request-spec/)*.  The example below illustrates a `QueryByExample`, which specifies the type of Verifiable Credential being requested and an optional reason for the request.
+A verifier can request credentials over CHAPI by forming a *[Verifiable Presentation Request](https://www.w3.org/TR/vcalm/#verifiable-presentation-request)*.  The example below illustrates a `QueryByExample`, which specifies the type of Verifiable Credential being requested and an optional reason for the request.
 
 ```javascript
 const testVpr = {
