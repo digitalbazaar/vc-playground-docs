@@ -8,9 +8,6 @@ The Verifiable Credentials Playground supports the following final specification
 * [OID4VCI 1.0](https://openid.net/specs/openid-4-verifiable-credential-issuance-1_0.html)
 * [OID4VP 1.0](https://openid.net/specs/openid-4-verifiable-presentations-1_0.html)
 
-> [!warning]
-> These details are subject to change as we iron out this integration approach.
-
 The OID4VCI and OID4VP protocols require a high level or coordination between
 relying parties, authentication servers, and credential issuing/verifying
 services. To avoid on going overhead for joining the VC Playground, the
