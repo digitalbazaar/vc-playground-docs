@@ -20,7 +20,7 @@ distributed VC system.
 
 ## Credential Handler API (CHAPI)
 
-The Credential Handler API (CHAPI) allows your digital wallet to receive [Verifiable Credentials](https://www.w3.org/TR/vc-data-model/) from an independent third-party issuer - or present Verifiable Credentials to an independent third-party verifier - in a way that establishes trust and preserves privacy.
+The Credential Handler API (CHAPI) allows your digital wallet to receive [Verifiable Credentials](https://www.w3.org/TR/vc-data-model-2.0/) from an independent third-party issuer - or present Verifiable Credentials to an independent third-party verifier - in a way that establishes trust and preserves privacy.
 
 Too often, users are presented with a fixed set of options for authentication with third-party sites. The CHAPI protocol provides mediation between any CHAPI-enabled Web or mobile application and a third-party site.
 
@@ -45,6 +45,6 @@ Interested in making your Verifier/Issuer/Wallet available for experimentation? 
     <a href="chapi/playgroundfaq" class="btn2">VC Playground FAQ</a>
 </p>
 
-[CHAPI](https://w3c-ccg.github.io/credential-handler-api/) and [Verifiable Credentials](https://www.w3.org/TR/vc-data-model/) are the result of open collaboration through the World Wide Web Consortium (W3C).  You can find more information and join the discussion at the [W3C Credentials Community Group](https://www.w3.org/community/credentials/).
+[CHAPI](https://w3c-ccg.github.io/credential-handler-api/) and [Verifiable Credentials](https://www.w3.org/TR/vc-data-model-2.0/) are the result of open collaboration through the World Wide Web Consortium (W3C).  You can find more information and join the discussion at the [W3C Credentials Community Group](https://www.w3.org/community/credentials/).
 
 Read more about the [open standards that power CHAPI](/standards).

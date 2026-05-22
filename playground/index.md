@@ -9,7 +9,7 @@ Have you already integrated CHAPI into your project and now you’re interested 
 ### Introduction
 You can integrate your Issuer into our tooling with the [VC Playground Issuer](https://vcplayground.org/issuer).
 
-If you provide a [VC-API Issue Credential Endpoint](https://w3c-ccg.github.io/vc-api/#issue-credential), we can add your issuer to the list of options accessible from the "Gear" icon on the site.  Your endpoint should end in `/credentials/issue`.
+If you provide a [VC-API Issue Credential Endpoint](https://www.w3.org/TR/vcalm/#issue-credential), we can add your issuer to the list of options accessible from the "Gear" icon on the site.  Your endpoint should end in `/credentials/issue`.
 
 We've put together a [simple test utility](https://github.com/credential-handler/chapi-playground-test-suite) that you can run locally against your endpoint (the test runs locally; the endpoint can be running anywhere).  Once your issuer endpoint can pass the test conditions, we'll be ready to add it to the list of options in the VC Playground.
 
@@ -42,7 +42,7 @@ When the VC Playground issues a credential, it generates a CHAPI `store()` event
 
 ### Performing DID Authentication (“DID Auth”) with the VC Playground in the store() workflow?
 
-The VC Playground follows the DID Auth patterns described in the [Verifiable Presentation Request (VPR) spec](https://w3c-ccg.github.io/vp-request-spec/#example-example-get-request).
+The VC Playground follows the DID Auth patterns described in the [Verifiable Presentation Request (VPR) spec](https://www.w3.org/TR/vcalm/#did-authentication).
 
 First, the Playground will send a Verifiable Presentation Request as a "web" credential object using `navigator.credentials.get()`.  Second, your wallet will respond with a Verifiable Presentation,  also as a "web" credential object.  Examples of both the VPR and VP are included in the [wallet developer notes](/chapi/wallets).
 
@@ -50,9 +50,9 @@ The Playground receives the DID Auth, it extracts the value of `holder` and inse
 
 
 ### Integrating with the VC-API Exchanges workflow
-The general `/exchanges` pattern is illustrated in the [Verifiable Presentation Request (VPR) spec](https://w3c-ccg.github.io/vp-request-spec/#example-example-interact-request), which shows how an issuer can ask for DID Authentication and then point the wallet at `/exchanges` endpoint to perform the Auth-Pickup workflow.
+The general `/exchanges` pattern is illustrated in the [Verifiable Presentation Request (VPR) spec](https://www.w3.org/TR/vcalm/#verifiable-presentation-request), which shows how an issuer can ask for DID Authentication and then point the wallet at `/exchanges` endpoint to perform the Auth-Pickup workflow.
 
-In this example, the `interact` field describes the type and URL of the `/exchanges` endpoint.  The `type` is an `UnmediatedPresentationService2021`, which is outlined in the [VC-API spec](https://w3c-ccg.github.io/vc-api/#exchange-examples).
+In this example, the `interact` field describes the type and URL of the `/exchanges` endpoint.  The `type` is an `UnmediatedPresentationService2021`, which is outlined in the [VCALM spec](https://www.w3.org/TR/vcalm/#exchange-examples).
 
 The VC Playground implementation follows the general pattern, via the following spcific steps (with example data):
 

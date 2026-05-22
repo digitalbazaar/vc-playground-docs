@@ -10,7 +10,7 @@ permalink: /chapi/wallets/exchanges/
 > the issuance, verification, transmission, or presentation of verifiable
 > credentials.
 <figcaption>
-  <cite>from <a href="https://w3c-ccg.github.io/vc-api/#workflows-and-exchanges">VC API Workflows & Exchanges</a></cite>
+  <cite>from <a href="https://www.w3.org/TR/vcalm/#workflows-and-exchanges">VCALM Workflows & Exchanges</a></cite>
 </figcaption>
 </figure>
 
@@ -69,7 +69,7 @@ exchange is not yet complete and some *additional information is requested*, as
 specified by the contents of the associated verifiable presentation request.
 
 > Read more about possible values in the
-> [Verifiable Presentation Requests](https://w3c-ccg.github.io/vp-request-spec/#overview)
+> [Verifiable Presentation Requests](https://www.w3.org/TR/vcalm/#verifiable-presentation-request)
 > specification.
 
 For example:

@@ -173,8 +173,8 @@ Below is a partial example response:
 ```
 
 More complete examples can be found in the
-[Example Exchanges](https://w3c-ccg.github.io/vc-api/#exchange-examples)
-section of the [VC-API Specification](https://w3c-ccg.github.io/vc-api/).
+[Example Exchanges](https://www.w3.org/TR/vcalm/#exchange-examples)
+section of the [VCALM Specification](https://www.w3.org/TR/vcalm/).
 
 ### OID4VCI
 
@@ -334,5 +334,5 @@ When no `verifiablePresentationRequest` object is present, the exchange is
 complete.
 
 More complete examples can be found in the
-[Example Exchanges](https://w3c-ccg.github.io/vc-api/#exchange-examples)
-section of the [VC-API Specification](https://w3c-ccg.github.io/vc-api/).
+[Example Exchanges](https://www.w3.org/TR/vcalm/#exchange-examples)
+section of the [VCALM Specification](https://www.w3.org/TR/vcalm/).
