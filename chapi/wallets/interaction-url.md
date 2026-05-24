@@ -57,7 +57,7 @@ The response is a `protocols` object listing the supported exchange protocols:
 ```json
 {
   "protocols": {
-    "vcapi": "https://vcapi.example.com/workflows/abc123/exchanges/xyz789",
+    "vcapi": "https://vcapi.service.example/workflows/abc123/exchanges/xyz789",
     "OID4VP": "openid4vp://?client_id=..."
   }
 }
