@@ -47,8 +47,8 @@ with an `Accept: application/json` header. The `iuv=1` parameter is already
 part of the URL from the QR code:
 
 ```http
-GET /workflows/abc123/exchanges/xyz789?iuv=1
-Host: vcapi.example.com
+GET /interactions/mno456?iuv=1
+Host: website.example
 Accept: application/json
 ```
 
