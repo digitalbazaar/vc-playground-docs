@@ -99,7 +99,7 @@ The server will respond with one or more of the following fields:
 | `verifiablePresentationRequest` | Server is requesting credentials from the wallet |
 | `verifiablePresentation` | Server is offering credentials to the wallet |
 | `verifiablePresentation` + `verifiablePresentationRequest` | Server offers credentials and simultaneously requests more |
-| `redirectUrl` | Exchange is complete — navigate the user to this URL |
+| `redirectUrl` | Exchange is complete — navigate the user to this URL or handle another interaction URL |
 
 A `4xx` HTTP response indicates an error; the body will contain details.
 
@@ -132,7 +132,7 @@ When the server responds with a `verifiablePresentationRequest`, inspect the
       }]
     }],
     "challenge": "abc123",
-    "domain": "vcapi.example.com"
+    "domain": "vcapi.service.example"
   }
 }
 ```
@@ -149,7 +149,7 @@ Presentation, and POST it back to the **same exchange URL**:
 
 ```http
 POST /workflows/abc123/exchanges/xyz789
-Host: vcapi.example.com
+Host: vcapi.service.example
 Content-Type: application/json
 
 {
@@ -193,7 +193,9 @@ Store each credential in the wallet. If the same response also contains a
 
 The exchange is finished when the server returns either an empty body or a
 `redirectUrl`. If a `redirectUrl` is present, offer the user the option to
-continue there (e.g., open in browser).
+continue there (e.g., open in browser). If the `redirectUrl` value is
+another interaction URL (i.e., it includes `?iuv=1`), then it can be
+handled as another interaction to be processed.
 
 ---
 
