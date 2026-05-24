@@ -239,7 +239,8 @@ async function handleExchangeResponse(exchangeUrl, body) {
   }
 
   if('redirectUrl' in body) {
-    // offer user option to navigate
+    // offer user option to navigate; if the redirectUrl contains `?iuv=1`
+    // it is itself an interaction URL and can be processed as a new exchange
     offerRedirect(body.redirectUrl);
     return;
   }
