@@ -32,7 +32,7 @@ A QR code in this flow encodes an HTTPS URL called an _interaction URL_. Per the
 VCALM spec, the URL MUST contain an `iuv` query parameter set to `1`. Example:
 
 ```
-https://vcapi.example.com/workflows/abc123/exchanges/xyz789?iuv=1
+https://website.example/interactions/mno456?iuv=1
 ```
 
 Your wallet scans the QR code and extracts this URL. The URL itself does not
