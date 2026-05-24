@@ -85,7 +85,7 @@ If your wallet selects the `vcapi` protocol, begin the exchange by sending a
 
 ```http
 POST /workflows/abc123/exchanges/xyz789
-Host: vcapi.example.com
+Host: vcapi.service.example
 Content-Type: application/json
 
 {}
