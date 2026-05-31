@@ -4,8 +4,8 @@ permalink: /chapi/wallets/interaction-url/
 ---
 
 This page documents the end-to-end flow for wallets that initiate a credential
-exchange by scanning a QR code. This is the recommended entry point for native
-mobile wallets and any wallet that needs to work outside of a browser CHAPI
+exchange by scanning a QR code. This is the recommended entry point for cross
+device flows or any wallet that needs to work outside of a browser CHAPI
 event.
 
 The foundation for this flow is the
@@ -191,11 +191,12 @@ Store each credential in the wallet. If the same response also contains a
 
 ### Exchange Complete
 
-The exchange is finished when the server returns either an empty body or a
-`redirectUrl`. If a `redirectUrl` is present, offer the user the option to
-continue there (e.g., open in browser). If the `redirectUrl` value is
-another interaction URL (i.e., it includes `?iuv=1`), then it can be
-handled as another interaction to be processed.
+The exchange is finished when the server does not include a
+`verifiablePresentationRequest`. The server may send a `verifiablePresentation`,
+a `redirectUrl`, or an empty body. If a `redirectUrl` is present, offer the user the
+option to continue there (e.g., open in browser) if it is not an interaction URL. If
+the `redirectUrl` value is another interaction URL (i.e., it includes `?iuv=1`), then
+it can be handled as another interaction to be processed.
 
 ---
 
