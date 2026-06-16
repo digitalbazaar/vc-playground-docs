@@ -1,12 +1,15 @@
-const ValueParser = require("../../shared").ValueParser;
-const { Wikilink } = require("../wikilinks");
+import { sharedModule } from "./../../shared/index.js";
+import { wikilinksModule } from "../wikilinks/index.js";
+
+const { Wikilink } = wikilinksModule;
+const { ValueParser } = sharedModule;
 
 /**
  * Creates a filter function that resolves custom properties.
- * @param {import("@11ty/eleventy").UserConfig} eleventyConfig
+ * @param {import("@11ty/eleventy/UserConfig").default} eleventyConfig
  * @returns The filter function.
  */
-module.exports = (eleventyConfig) => {
+export const resolveCustomPropsFilter = (eleventyConfig) => {
   /**
    * Filter function to parse the custom properties of a note.
    * @param {Record<string, any>[]} properties The list of properties to parse.
@@ -16,8 +19,10 @@ module.exports = (eleventyConfig) => {
     const wikilink = new Wikilink(
       this.ctx.collections._notes,
       this.ctx.app.wikilinks,
-      eleventyConfig.getFilter("slugifyPath"),
-      eleventyConfig.getFilter("slugify")
+      {
+        slugify: eleventyConfig.getFilter("slugifyPath"),
+        slugifyAnchor: eleventyConfig.getFilter("slugify"),
+      },
     );
 
     function nameToDisplayName(name) {
@@ -40,25 +45,27 @@ module.exports = (eleventyConfig) => {
       if (typeof value === "string" && Wikilink.REGEX.test(value)) {
         const [, path, , text] = value.match(Wikilink.REGEX);
         const link = wikilink.process(path, text);
-        return [{ type: "wikilink", ...link }];
+        return [{ type: "wikilink", value, ...link }];
       }
 
       if (typeof value === "number") {
         const intl = new Intl.NumberFormat(
           options?.number?.locale,
-          options?.number?.format
+          options?.number?.format,
         );
-        return [{ type: "number", formattedValue: intl.format(value) }];
+        return [{ type: "number", value, formattedValue: intl.format(value) }];
       }
 
       if (typeof value === "boolean") {
-        return [{ type: "boolean", formattedValue: value ? "Yes" : "No" }];
+        return [
+          { type: "boolean", value, formattedValue: value ? "Yes" : "No" },
+        ];
       }
 
       if (value instanceof Date) {
         const intl = new Intl.DateTimeFormat(
           options?.date?.locale,
-          options?.date?.format
+          options?.date?.format,
         );
         return [{ type: "date", value, formattedValue: intl.format(value) }];
       }
@@ -70,6 +77,19 @@ module.exports = (eleventyConfig) => {
       return [{ type: "string", value }];
     }
 
+    function extractTemplateData(value, parsedValues) {
+      const isMultiValue = Array.isArray(value);
+      const rawValues = parsedValues.map((x) => x.value);
+      const formattedValues = parsedValues.flatMap(
+        (x) => x.formattedValue ?? null,
+      );
+
+      return {
+        value: isMultiValue ? rawValues : rawValues[0],
+        formattedValue: isMultiValue ? formattedValues : formattedValues[0],
+      };
+    }
+
     return properties.flatMap((property) => {
       const rootPath = property.path ?? "";
       const root = ValueParser.getValueByPath(this.ctx, rootPath) ?? {};
@@ -78,11 +98,20 @@ module.exports = (eleventyConfig) => {
         const value = ValueParser.getValueByPath(root, name);
         if (value === undefined || value === null) return [];
 
+        const parsedValues = parseValue(value, property.options);
+        if (parsedValues.length === 0) return [];
+
         return [
           {
             name,
             label: property.label || nameToDisplayName(name),
-            values: parseValue(value, property.options),
+            values: parsedValues,
+            template: property.template
+              ? {
+                  src: property.template,
+                  data: extractTemplateData(value, parsedValues),
+                }
+              : null,
           },
         ];
       });

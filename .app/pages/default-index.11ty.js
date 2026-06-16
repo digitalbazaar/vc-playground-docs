@@ -1,8 +1,11 @@
-const fs = require("fs");
+import fs from "fs";
 
-class DefaultIndex {
+const customIndexPaths = ["./../index.md", "./../index.njk", "./../index.html"];
+
+export default class DefaultIndex {
   data() {
-    const hasCustomIndex = fs.existsSync("./../index.md");
+    const hasCustomIndex = customIndexPaths.some((path) => fs.existsSync(path));
+
     return {
       title: "Home",
       permalink: hasCustomIndex ? false : "/",
@@ -22,5 +25,3 @@ class DefaultIndex {
     `;
   }
 }
-
-module.exports = DefaultIndex;

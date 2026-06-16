@@ -1,9 +1,9 @@
 /**
  * Creates the slugifyPath filter.
- * @param {import("@11ty/eleventy").UserConfig} eleventyConfig
+ * @param {import("@11ty/eleventy/UserConfig").default} eleventyConfig
  * @returns {((path: string) => string)} The filter function.
  */
-module.exports = (eleventyConfig) => (path) => {
+export const slugifyPathFilter = (eleventyConfig) => (path) => {
   const separator = "/";
   const slugify = eleventyConfig.getFilter("slugify");
 
