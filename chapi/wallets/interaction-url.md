@@ -283,7 +283,7 @@ for wallet-side implementation details.
 
 ## Sequence Diagram
 
-```mermaid
+{% mermaid %}
 sequenceDiagram
     participant U as User
     participant W as Wallet
@@ -299,4 +299,4 @@ sequenceDiagram
     W->>S: POST /workflows/abc/exchanges/xyz  { verifiablePresentation: { ... } }
     S->>W: { verifiablePresentation: { verifiableCredential: [...] } }
     W->>U: Store received credentials
-```
+{% endmermaid %}

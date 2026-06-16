@@ -143,7 +143,7 @@ object that expresses information about the error.
 
 Below is an example of a typical exchange:
 
-```mermaid
+{% mermaid %}
 sequenceDiagram
     participant H as Holder
     participant W as Holder Coordinator (Wallet)
@@ -158,7 +158,7 @@ sequenceDiagram
     Note right of W: POST /workflows/abc/exchanges/123 &mdash; sent via interaction mechanism to meet requirements of exchange
     I->>W: Verifiable Presentation
     Note left of I: VP includes result of exchange (e.g., VCs), or VPR with new interaction request, or error description
-```
+{% endmermaid %}
 
 The exchange client (Wallet) code for a flow like the above may look similar to
 the following:
