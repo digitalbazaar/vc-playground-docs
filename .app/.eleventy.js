@@ -10,6 +10,7 @@ const wikilinksModule = require("./lib/modules/wikilinks");
 const assetsModule = require("./lib/modules/assets");
 const core = require("./lib/core");
 const mermaid = require("./lib/modules/mermaid");
+const docx = require("./lib/modules/docx");
 
 module.exports = (eleventyConfig) => {
   sharedModule.setup(eleventyConfig);
@@ -24,6 +25,7 @@ module.exports = (eleventyConfig) => {
   wikilinksModule.setup(eleventyConfig);
   assetsModule.setup(eleventyConfig);
   mermaid.setup(eleventyConfig);
+  docx.setup(eleventyConfig);
 
   core.setup(eleventyConfig);
 
