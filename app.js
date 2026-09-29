@@ -78,6 +78,16 @@ module.exports = defineConfig({
           },
         ],
       },
+      {
+        label: "VCALM",
+        groups: [
+          {
+            query: createNotesQuery({
+              pattern: "^/vcalm/",
+            }),
+          },
+        ],
+      },
     ],
   },
   tags: {
