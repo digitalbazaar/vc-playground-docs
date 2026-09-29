@@ -17,7 +17,7 @@ module.exports = {
   setup(config) {
     config.addShortcode("docxDownload", function () {
       const file = docxFileName(this.page.url);
-      return `<p class="button-row"><a class="btn2" href="${file}" download ${MARKER}>Download as .docx</a></p>`;
+      return `<a class="docx-download" href="${file}" download ${MARKER}><svg aria-hidden="true" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg>Download .docx</a>`;
     });
 
     config.on("eleventy.after", async ({ results }) => {

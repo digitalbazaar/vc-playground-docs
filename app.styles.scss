@@ -21,3 +21,49 @@
 a[href^=http]::after {
   content: ' ↗';
 }
+
+// Word download link from the `docxDownload` shortcode: a small button at
+// the right of the page title, and below the title on narrow screens.
+.page__main article:has(.docx-download) {
+  position: relative;
+
+  .page__title {
+    padding-inline-end: 11rem;
+  }
+}
+
+p:has(> .docx-download:only-child) {
+  margin: 0;
+}
+
+.docx-download {
+  position: absolute;
+  inset-block-start: 0.5rem;
+  inset-inline-end: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-3);
+  border: 1px solid var(--color-primary-border);
+  border-radius: var(--rounded-md);
+  color: var(--color-primary-text);
+  font-size: var(--font-size-sm);
+  text-decoration: none;
+  white-space: nowrap;
+
+  &:hover {
+    border-color: var(--color-primary-border-hover);
+    background-color: var(--color-primary-bg-hover);
+  }
+}
+
+@media (max-width: 40rem) {
+  .page__main article:has(.docx-download) .page__title {
+    padding-inline-end: 0;
+  }
+
+  .docx-download {
+    position: static;
+    margin-block-end: var(--space-4);
+  }
+}
